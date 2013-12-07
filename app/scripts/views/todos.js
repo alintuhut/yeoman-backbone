@@ -19,9 +19,12 @@ yeomanBackbone.Views = yeomanBackbone.Views || {};
             this.render();
 
             this.listenTo(this.collection, 'add', this.addTodoItem);
-            this.listenTo(this.collection, 'reset', this.addAllTodoItems);
+            this.listenTo(this.collection, 'reset', this.addAllTodoItems); 
 
+            this.collection.query = new Parse.Query(yeomanBackbone.Models.TodoModel);
+            this.collection.query.equalTo("user", Parse.User.current());
             this.collection.fetch();
+ 
         },
 
         render: function () {

@@ -5,9 +5,7 @@ yeomanBackbone.Collections = yeomanBackbone.Collections || {};
 (function () {
     'use strict';
 
-    yeomanBackbone.Collections.TodosCollection = Backbone.Collection.extend({
-
-        localStorage: new Backbone.LocalStorage('yeoman-backbone-play'),
+    yeomanBackbone.Collections.TodosCollection = Parse.Collection.extend({
 
         initialize: function() {
             this.model = yeomanBackbone.Models.TodoModel;

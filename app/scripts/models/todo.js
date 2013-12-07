@@ -5,7 +5,9 @@ yeomanBackbone.Models = yeomanBackbone.Models || {};
 (function () {
     'use strict';
 
-    yeomanBackbone.Models.TodoModel = Backbone.Model.extend({
+    yeomanBackbone.Models.TodoModel = Parse.Object.extend({
+
+        className: "Todo",
 
         defaults: {
             title: '',
